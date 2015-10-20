@@ -1,0 +1,65 @@
+/*
+ * Products to list for the shopping cart
+ * @author Joseph Kirkish
+ * @Date 07/28/2015
+ */
+
+public class Products1<ListFrame> extends Greetings implements BestBuy {
+
+	// These are main categories in the shopping cart
+	String[] mainCat = { MainCat1, MainCat2, MainCat3, MainCat4, MainCat5 };
+	// Each Main Category has subcategories
+	String[] subCat = { SubCat1, SubCat2, SubCat3, SubCat4, SubCat5, SubCat6,
+			SubCat7, SubCat8, SubCat9, SubCat10, SubCat11, SubCat12, SubCat13,
+			SubCat14, SubCat15, SubCat16, SubCat17, SubCat18, SubCat19,
+			SubCat20 };
+	// The actual item is what is placed in each category
+	String[] items = { item1, item2, item3, item4, item5, item6, item7, item8,
+			item9, item10, item11, item12, item13, item14, item15, item16,
+			item17, item18, item19, item20, item21, item22, item23, item24,
+			item25, item26, item27, item28, item29, item30, item31, item32,
+			item33, item34, item35, item36, item37, item38, item39, item40 };
+
+	public void enterDetails() {
+		// Here the products details are entered into the display screen
+		System.out.println("Main Products______________");
+		for (int count = 0; count < mainCat.length; count++) {
+			System.out.println();
+			System.out.printf("Category: %50s ", mainCat[count]);
+
+		}
+		System.out.println();
+	}
+
+	// The subcategories are displayed into the screen
+	public void DisplaySubCat() {
+		System.out.println("SubCategory products");
+
+		for (int count = 0; count < subCat.length; count++) {
+			System.out.println();
+
+			System.out.printf("subCategory: %25s ", subCat[count]);
+		}
+		System.out.println();
+	}
+
+	// THe 40 items are displayed here
+	public void displayItems() {
+		for (int count = 0; count < items.length; count++) {
+			System.out.println();
+
+			System.out.printf("Items: %5s ", items[count]);
+		}
+
+	}
+
+	// this is the main method
+	public static void main(String[] args) {
+		Products1 product = new Products1();
+		product.enterDetails();
+		product.DisplaySubCat();
+		product.displayItems();
+
+	}// end of main
+
+}// end of class
