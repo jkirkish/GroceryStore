@@ -1,0 +1,176 @@
+/*
+ * Greets for the shopping cart
+ * @author Joseph Kirkish
+ * @Date 07/28/2015
+ */
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public abstract class Greetings implements BestBuy {
+
+	String creditCard = "Joseph Kirkish";
+	String MainCat1 = "Appliances";
+	String MainCat2 = "TV & HOME THEATER";
+	String MainCat3 = "Computers & Tablets";
+	String MainCat4 = "Cell Phones";
+	String MainCat5 = "Cameras and CamCorders";
+	String[] mainCat = { MainCat1, MainCat2, MainCat3, MainCat4, MainCat5 };
+
+	String SubCat1 = "Refrigerator";
+	String SubCat2 = "Freezers";
+	String SubCat3 = "Dishwashers";
+	String SubCat4 = "Microwaves";
+	String SubCat5 = "Ultra HD";
+	String SubCat6 = "Curved TV";
+	String SubCat7 = "Smart TV";
+	String SubCat8 = "OutDoor TV";
+	String SubCat9 = "Laptops";
+	String SubCat10 = "Desktops";
+	String SubCat11 = "Monitors";
+	String SubCat12 = "Printers";
+	String SubCat13 = "Apple";
+	String SubCat14 = "Verizon";
+	String SubCat15 = "Sprint";
+	String SubCat16 = "Tmobile";
+	String SubCat17 = "SD MEMORY CARDS";
+	String SubCat18 = "DIGITAL SLR CAMERAS";
+	String SubCat19 = "Lenses";
+	String SubCat20 = "MIRRORLESS CAMERAS";
+	String[] subCat = { SubCat1, SubCat2, SubCat3, SubCat4, SubCat5, SubCat6,
+			SubCat7, SubCat8, SubCat9, SubCat10, SubCat11, SubCat12, SubCat13,
+			SubCat14, SubCat15, SubCat16, SubCat17, SubCat18, SubCat19,
+			SubCat20 };
+
+	String item1 = "portable frigerator";
+	String item2 = "Big frigerator";
+	String item3 = "small freezer";
+	String item4 = "Larger Freezer";
+	String item5 = "whirlpool";
+	String item6 = "kennmore";
+	String item7 = "Microwave oven";
+	String item8 = "Defrost option ";
+	String item9 = "Sony 55in";
+	String item10 = "Samsumg 32inch";
+	String item11 = "Samsung 55inch";
+	String item12 = "Sony 21inch";
+	String item13 = "Sony 32inch";
+	String item14 = "Hitachi 65in";
+	String item15 = "Plasma 77in";
+	String item16 = "Cathode Ray tube black and white";
+	String item17 = "Sony 13 inch portable laptop";
+	String item18 = "Sony 12 inch portable laptop";
+	String item19 = "Hp deskop";
+	String item20 = "Fujitsu desktop";
+	String item21 = "32 in color monitor";
+	String item22 = "HDMI color projector";
+	String item23 = "Laser Printer";
+	String item24 = "Photo inkJet";
+	String item25 = "Iphone6";
+	String item26 = "Iphone5";
+	String item27 = "Verizon smartphone";
+	String item28 = "Verizom regular phone";
+	String item29 = "Sprint phone unlimited";
+	String item30 = "Sprint phone regular";
+	String item31 = "Tmobile tablet";
+	String item32 = "Tmobile smartphone";
+	String item33 = "3 GB";
+	String item34 = "34 GB";
+	String item35 = "50 megapixels";
+	String item36 = "45 megal pixels";
+	String item37 = "concave lens";
+	String item38 = "convex lens";
+	String item39 = "Mirorless camera1";
+	String item40 = "MirrolessCamera2";
+
+	String[] items = { item1, item2, item3, item4, item5, item6, item7, item8,
+			item9, item10, item11, item12, item13, item14, item15, item16,
+			item17, item18, item19, item20, item21, item22, item23, item24,
+			item25, item26, item27, item28, item29, item30, item31, item32,
+			item33, item34, item35, item36, item37, item38, item39, item40 };
+
+	double price1 = 1450.00;
+	double price2 = 150.00;
+	double price3 = 160.00;
+	double price4 = 103.00;
+	double price5 = 104.00;
+	double price6 = 107.00;
+	double price7 = 1032.00;
+	double price8 = 106.00;
+	double price9 = 190.00;
+	double price10 = 170.00;
+	double price11 = 106.00;
+	double price12 = 170.00;
+	double price13 = 105.00;
+	double price14 = 103434.00;
+	double price15 = 140.00;
+	double price16 = 10.69;
+	double price17 = 34.00;
+	double price18 = 56.00;
+	double price19 = 78.00;
+	double price20 = 78.00;
+	double price21 = 134.00;
+	double price22 = 30.00;
+	double price23 = 134.00;
+	double price24 = 108.00;
+	double price25 = 1076.00;
+	double price26 = 10765.00;
+	double price27 = 1032.00;
+	double price28 = 1043.00;
+	double price29 = 1021.00;
+	double price30 = 1012.00;
+	double price31 = 1089.00;
+	double price32 = 1054.00;
+	double price33 = 1032.00;
+	double price34 = 10.98;
+	double price35 = 10345.00;
+	double price36 = 1065.00;
+	double price37 = 1087.00;
+	double price38 = 1043.00;
+	double price39 = 1098.00;
+	double price40 = 106545.00;
+	double[] pricess = { price1, price2, price3, price4, price5, price6,
+			price7, price8, price9, price10, price11, price12, price13,
+			price14, price15, price16, price17, price18, price19, price20,
+			price21, price22, price23, price24, price25, price26, price27,
+			price28, price29, price30, price31, price32, price33, price34,
+			price35, price36, price37, price38, price39, price40 };
+
+	public static void main(String[] args) {
+
+		System.out.println("Welcome to Best Buy");
+		System.out.println();
+
+		Scanner in = new Scanner(System.in);
+		int count = 1;
+		while (count != 0) {
+			System.out.println("");
+			System.out.println("Please choose your selection:");
+			System.out.println("1) press 1 to display all products");
+			System.out.println("2) press 2 to evaluate products");
+			System.out.println("3) press 3 to buy products");
+			int selection = in.nextInt();
+			switch (selection) {
+			case 1:
+				Products1 product = new Products1();
+				product.main(args);
+				break;
+			case 2:
+				Price1 price1 = new Price1();
+				price1.main(args);
+				break;
+			case 3:
+				creditCard card = new creditCard();
+				card.main(args);
+				break;
+			case 4:
+				JOptionPane.showMessageDialog(null, "HAVE A NICE DAY!");
+				count = 0;
+				System.exit(0);
+			}
+
+		}
+	}
+
+}
