@@ -1,0 +1,12 @@
+*
+ * Interface for the shopping cart
+ * @author Joseph Kirkish
+ * @Date 07/28/2015
+ */
+
+public interface BestBuy {
+
+	// This shows a contract for all of the classes to use
+	public void enterDetails();
+
+}
