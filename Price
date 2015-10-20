@@ -1,0 +1,116 @@
+*
+ * Prices for the shopping cart
+ * @author Joseph Kirkish
+ * @Date 07/28/2015
+ */
+
+
+import java.util.Scanner;
+
+public class Price1 extends Greetings implements BestBuy {
+
+	
+	String[] mainCat = { MainCat1, MainCat2, MainCat3, MainCat4, MainCat5 };
+	String[] subCat = { SubCat1, SubCat2, SubCat3, SubCat4, SubCat5, SubCat6,
+			SubCat7, SubCat8, SubCat9, SubCat10, SubCat11, SubCat12, SubCat13,
+			SubCat14, SubCat15, SubCat16, SubCat17, SubCat18, SubCat19,
+			SubCat20 };
+	String[] items = { item1, item2, item3, item4, item5, item6, item7, item8,
+			item9, item10, item11, item12, item13, item14, item15, item16,
+			item17, item18, item19, item20, item21, item22, item23, item24,
+			item25, item26, item27, item28, item29, item30, item31, item32,
+			item33, item34, item35, item36, item37, item38, item39, item40 };
+	
+	double[] pricess = { price1, price2, price3, price4, price5, price6,
+			price7, price8, price9, price10, price11, price12, price13,
+			price14, price15, price16, price17, price18, price19, price20,
+			price21, price22, price23, price24, price25, price26, price27,
+			price28, price29, price30, price31, price32, price33, price34,
+			price35, price36, price37, price38, price39, price40 };
+
+	boolean Category;
+	boolean SubCatory1, sub2, sub3, sub4;
+	boolean itemValid;
+
+	public boolean subCat(String cat) {
+		boolean mainCat = false;
+		for (int count = 0; count < subCat.length; count++) {
+			if (cat.equalsIgnoreCase(subCat[count])) {
+				mainCat = true;
+			}
+		}
+		if (mainCat == false) {
+			System.err.println("This main category is not in our repository.");
+		}
+		return mainCat;
+	}
+
+	public boolean CatValid(String name) {
+		boolean catValid = false;
+		for (int count = 0; count < mainCat.length; count++) {
+			if (name.equalsIgnoreCase(mainCat[count])) {
+				catValid = true;
+			}
+
+		}
+		if (catValid == false) {
+			System.err.println("This category is not in our repository.");
+		}
+		return catValid;
+	}
+
+	public boolean itemValid(String productitem) {
+		boolean itemValid = false;
+		for (int count = 0; count < items.length; count++) {
+			if (productitem.equalsIgnoreCase(items[count])) {
+				itemValid = true;
+				// System.out.println("The price of the item is " +
+				// pricess[count]);
+			}
+
+		}
+		if (itemValid == false) {
+			System.err.println("This item is not in our repository.");
+		}
+		return itemValid;
+	}
+
+	// overloaded method from the creditCard class
+	
+	public void displayPrice(String item) {
+
+		for (int count = 0; count < items.length; count++) {
+			if (item.equalsIgnoreCase(items[count])) {
+				System.out.println("The price of item " + items[count] + " is "
+						+ pricess[count]);
+			}
+		}
+	}
+	@Override
+	public void enterDetails(){
+   
+    	Scanner input1 = new Scanner(System.in);
+		System.out.print("Please enter the Product Name");
+		String name = input1.nextLine();
+		this.CatValid(name);
+
+		System.out.print("Please enter the Category");
+		String cat = input1.nextLine();
+		this.subCat(cat);
+
+		System.out.print("Please enter the item");
+		String productitem = input1.nextLine();
+		this.itemValid(productitem);
+		System.out.println();
+		this.displayPrice(productitem);
+	}
+    
+	public static void main(String[] args) {
+
+		Price1 price = new Price1();
+		price.enterDetails();
+	    		
+
+   }	
+
+}
